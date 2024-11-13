@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0i38588c5mnn"]
+
+[ext_resource type="Texture2D" uid="uid://vomh8whkk3h4" path="res://img/kiwi_wingdown.png" id="1_8j3st"]
+[ext_resource type="Texture2D" uid="uid://c7jhjtnjslof6" path="res://img/kiwi_wingup.png" id="2_6a6wo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hsfer"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8j3st")
+}],
+"loop": true,
+"name": &"wingdown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6a6wo")
+}],
+"loop": true,
+"name": &"wingup",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rt3xd"]
+radius = 33.0
+height = 96.0
+
+[node name="Area2D" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.153646, 0.160456)
+sprite_frames = SubResource("SpriteFrames_hsfer")
+animation = &"wingdown"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, -17)
+shape = SubResource("CapsuleShape2D_rt3xd")

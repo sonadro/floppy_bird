@@ -1,0 +1,12 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1731529545
+::res://img/::1731530326
+flappybird_pipe.png::CompressedTexture2D::2553445142465701912::1731529192::1731529275::1::::<><>::
+icon.svg::CompressedTexture2D::1990821467173296033::1731527461::1731529287::1::::<><>::
+kiwi_wingdown.png::CompressedTexture2D::1503609877014137675::1731530276::1731530330::1::::<><>::
+kiwi_wingup.png::CompressedTexture2D::7037905873143817433::1731530320::1731530330::1::::<><>::
+::res://scenes/::1731530237
+pipe.tscn::PackedScene::4389762359898254131::1731530186::0::1::::<><>::uid://bcm54r553apoa::::res://img/flappybird_pipe.png
+game.tscn::PackedScene::5572518662958021803::1731530237::0::1::::<><>::res://scripts/Game.cs<>uid://b3so0k5j0v108::::res://scenes/pipe.tscn
+::res://scripts/::1731530254
+Game.cs::CSharpScript::-1::1731530254::0::1::::<>Node2D<>::
