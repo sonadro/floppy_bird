@@ -1,5 +1,5 @@
 res://scenes/game.tscn
-res://scenes/pipe.tscn
-res://scripts/Game.cs
-res://scenes/bird.tscn
 res://scripts/Bird.cs
+res://scripts/Game.cs
+res://scenes/pipe.tscn
+res://scenes/bird.tscn

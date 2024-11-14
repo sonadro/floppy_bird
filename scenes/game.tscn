@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://clnmtk4p4euy2"]
+[gd_scene load_steps=7 format=3 uid="uid://clnmtk4p4euy2"]
 
 [ext_resource type="Script" path="res://scripts/Game.cs" id="1_khkib"]
 [ext_resource type="PackedScene" uid="uid://b3so0k5j0v108" path="res://scenes/pipe.tscn" id="2_0u0rw"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r7gs2"]
 size = Vector2(435, 837)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_etg3j"]
+size = Vector2(106.75, 183.5)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_khkib")
@@ -30,5 +33,34 @@ position = Vector2(1072, 863)
 position = Vector2(-222.5, 308.5)
 shape = SubResource("RectangleShape2D_r7gs2")
 
+[node name="ScoreCounter" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ScoreCounter"]
+position = Vector2(101, 692.75)
+shape = SubResource("RectangleShape2D_etg3j")
+
+[node name="UI" type="Node" parent="."]
+
+[node name="HighScoreLabel" type="RichTextLabel" parent="UI"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 16.0
+offset_bottom = 40.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center]High Score: [color=green]0"
+metadata/_edit_lock_ = true
+
+[node name="ScoreLabel" type="RichTextLabel" parent="UI"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 48.0
+offset_bottom = 73.0
+grow_horizontal = 2
+bbcode_enabled = true
+text = "[center]Score: [color=green]0"
+metadata/_edit_lock_ = true
+
 [connection signal="area_entered" from="Bird" to="Bird" method="OnAreaEntered"]
 [connection signal="area_entered" from="LeftBorder" to="." method="OnLeftBorderAreaEntered"]
+[connection signal="area_entered" from="ScoreCounter" to="Bird" method="OnScoreCounterAreaEntered"]
